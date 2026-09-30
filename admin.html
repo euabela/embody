@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>emBODY researcher</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="card wide">
+    <h1>emBODY — researcher tools</h1>
+    <p class="muted">Everything on this page runs in your browser. Nothing is uploaded.</p>
+
+    <h2>Sessions stored in this browser</h2>
+    <p class="muted">Participants who ran the experiment on this device (e.g. a lab computer), for the experiment config <code id="exp"></code>.</p>
+    <div class="toolbar">
+      <button class="primary" id="export">Download all as ZIP</button>
+      <button id="viewLocal">Show heatmaps</button>
+      <button class="danger" id="clear">Delete all from this browser…</button>
+    </div>
+    <table class="list" id="sessions"></table>
+
+    <h2>Heatmap viewer</h2>
+    <p class="muted">Load exported ZIPs, or the <code>subjects</code> folder written by the server (the v1 PHP tool's folder works too).
+      Maps are reconstructed like the original <code>embody_demo.m</code>: paint points, Gaussian brush (σ = 5 px), left body minus right body.</p>
+    <div class="toolbar">
+      <label><button onclick="this.nextElementSibling.click()" type="button">Open ZIP / CSV files…</button><input id="files" type="file" multiple accept=".zip,.csv,.txt,.json" hidden></label>
+      <label><button onclick="this.nextElementSibling.click()" type="button">Open subjects folder…</button><input id="folder" type="file" webkitdirectory hidden></label>
+      <label>Show <select id="mode"><option value="mean">group mean</option></select></label>
+      <button id="png" disabled>Save figure as PNG</button>
+    </div>
+    <p id="info" class="muted"></p>
+    <div style="display:flex;align-items:center;gap:8px;font-size:.8rem" id="cbar" hidden>
+      <span id="cmin"></span><canvas class="colorbar" width="256" height="1"></canvas><span id="cmax"></span>
+      <span class="muted">(blue = decrease, red = increase)</span>
+    </div>
+    <div class="grid" id="maps"></div>
+  </div>
+  <script src="config.js"></script>
+  <script src="js/embody.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
