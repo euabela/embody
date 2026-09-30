@@ -3,7 +3,7 @@
 A modern, zero-install rebuild of the **emBODY** bodily-maps tool
 ([original by Enrico Glerean, Lauri Nummenmaa & Juulia Suvilehto](https://version.aalto.fi/gitlab/eglerean/embody)).
 Participants colour the body regions whose activity they feel increasing (left, red) or decreasing (right, blue)
-for each stimulus, as in Nummenmaa et al. (2014), *PNAS*.
+for each stimulus, as in Nummenmaa et al. (2014), *PNAS*,https://doi.org/10.1073/pnas.1321664111.
 
 It is plain HTML + JavaScript: **no PHP, no database, no build step, no dependencies**. It runs in any
 modern browser on desktop, tablet or phone (mouse, touch and pen).
